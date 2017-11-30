@@ -6,4 +6,4 @@ Connecting an _electret microphone breakout_ to a _ESP8266_ module:
 * Blinks led on noise level, according to threshold and delay parameters.
 * Schematic:
 
-<img src="https://github.com/USIMakers/NoiseDetection/blob/master/prototypes/1.0/p1.0_sketch.png" width="100">
+<img src="https://github.com/USIMakers/NoiseDetection/blob/master/prototypes/1.0/p1.0_sketch.png" width="600">
