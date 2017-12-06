@@ -27,6 +27,8 @@ void draw () {
   // draw the line:
   stroke(255, 255, 255);
   line(xCoord, height, xCoord, height - inputData);
+  
+  //point(xCoord, height - inputData);
 
   // Repeat graph plotting
   if (xCoord >= width) {
@@ -47,13 +49,10 @@ void serialEvent (Serial myPort) {
 
   if (inString != null && output != null) {
     
-    // trim off any whitespace.
     inString = trim(inString);
-    
-    // convert to an int and map to the screen height:
     inputData = float(inString);
     
-    println(inputData + " " + h + ":" + m);
+    println(inputData + " " + h + ":" + m + ":" + s);
     
     // Generates raw CSV data.
     output.println(inputData + "," + h + ":" + m + ":" + s);
