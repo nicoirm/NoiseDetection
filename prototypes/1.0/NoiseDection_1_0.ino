@@ -1,24 +1,25 @@
-const int knockSensor = A0;		// Analog signal on pin 0
-const int threshold = 40;		// Threshold value of the detected sound
+const int knockSensor = A0; // Data input pin A0
+const int threshold = 600;  
 
-int sensorReading = 0;			// Variable to store the value read from the sensor pin
+int sensorReading = 0;      // Initialization of input data
+int ledState = LOW;         // Initialization LED status
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT); 
-  Serial.begin(9600);       	// Serial port
+  Serial.begin(9600);       // Serial port used
 }
 
 void loop() {
-
-  sensorReading = analogRead(knockSensor);		// Store value of the sensor 
   
+  sensorReading = analogRead(knockSensor);
+
   if (sensorReading >= threshold) {
-
-    Serial.println(sensorReading); 
-    ledState =! ledState;
-    digitalWrite(LED_BUILTIN, ledState);		// Update the LED status
-
+    
+    ledState = !ledState;
+    digitalWrite(LED_BUILTIN, ledState);
+    
+    Serial.println(sensorReading);
   }
 
-  delay(1);  									// Delay for sensor capture
-}
+  delay(0);
+}  
